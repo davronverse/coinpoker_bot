@@ -1,0 +1,35 @@
+Control Identifiers:
+
+Table - ''    (L-1441, T380, R-524, B936)
+['Table']
+child_window(auto_id="Lobby.captionWrapper.wrapper.content.TabForm.scrollbarContainer.ListBox", control_type="Table")
+   | 
+   | Pane - ''    (L0, T0, R0, B0)
+   | ['Pane']
+   | 
+   | Header - 'NAME'    (L-1441, T380, R-1196, B410)
+   | ['Header', 'NAME', 'NAMEHeader', 'Header0', 'Header1']
+   | child_window(title="NAME", control_type="Header")
+   | 
+   | Header - 'GAME'    (L-1196, T380, R-1069, B410)
+   | ['GAMEHeader', 'GAME', 'Header2']
+   | child_window(title="GAME", control_type="Header")
+   | 
+   | Header - 'TYPE'    (L-1069, T380, R-967, B410)
+   | ['TYPEHeader', 'TYPE', 'Header3']
+   | child_window(title="TYPE", control_type="Header")
+   | 
+   | Header - 'BLINDS'    (L-967, T380, R-845, B410)
+   | ['BLINDS', 'BLINDSHeader', 'Header4']
+   | child_window(title="BLINDS", control_type="Header")
+   | 
+   | Header - 'PLAYERS'    (L-845, T380, R-754, B410)
+   | ['PLAYERS', 'PLAYERSHeader', 'Header5']
+   | child_window(title="PLAYERS", control_type="Header")
+   | 
+   | Header - 'WAIT'    (L-754, T380, R-674, B410)
+   | ['WAITHeader', 'WAIT', 'Header6']
+   | child_window(title="WAIT", control_type="Header")
+   | 
+   | Header - ''    (L-674, T380, R-524, B410)
+   | ['Header7']
