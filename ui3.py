@@ -67,11 +67,21 @@ class MainWindow(QMainWindow):
         # self.max_blinds_input.textChanged.connect(self.save_settings)
         form_layout.addRow("Maximum Buy-in Blinds:", self.max_blinds_input)
 
-        self.seats_combobox = QComboBox()
-        self.seats_combobox.addItems(["2", "4", "7"])
-        self.seats_combobox.setStyleSheet("padding: 5px; font-size: 16px; color: black; background-color: white;")
-        # self.seats_combobox.currentIndexChanged.connect(self.save_settings)
-        form_layout.addRow("Seats:", self.seats_combobox)
+        # self.seats_combobox = QComboBox()
+        # self.seats_combobox.addItems(["2", "4", "7"])
+        # self.seats_combobox.setStyleSheet("padding: 5px; font-size: 16px; color: black; background-color: white;")
+        # # self.seats_combobox.currentIndexChanged.connect(self.save_settings)
+        # form_layout.addRow("Seats:", self.seats_combobox)
+
+        self.seat_checkboxes = []
+        seats_layout = QHBoxLayout()
+        for seat in ["2", "4", "7"]:
+            checkbox = QCheckBox(seat)
+            checkbox.setStyleSheet("font-size: 16px; color: black; background-color: white; padding: 5px;")
+            checkbox.stateChanged.connect(self.save_settings)
+            self.seat_checkboxes.append(checkbox)
+            seats_layout.addWidget(checkbox)
+        form_layout.addRow("Seats:", seats_layout)
 
         self.filled_seats_spinbox = QSpinBox()
         self.filled_seats_spinbox.setRange(0, 7)
@@ -147,6 +157,9 @@ class MainWindow(QMainWindow):
             }
             QCheckBox {
                 color: white;
+            }
+            QListWidget {
+                height: 50px;
             }
         """)
 
@@ -228,7 +241,8 @@ class MainWindow(QMainWindow):
 
         reg.SetValueEx(registry_key, "MinBlinds", 0, reg.REG_SZ, self.min_blinds_input.text())
         reg.SetValueEx(registry_key, "MaxBlinds", 0, reg.REG_SZ, self.max_blinds_input.text())
-        reg.SetValueEx(registry_key, "Seats", 0, reg.REG_SZ, self.seats_combobox.currentText())
+        selected_seats = [checkbox.text() for checkbox in self.seat_checkboxes if checkbox.isChecked()]
+        reg.SetValueEx(registry_key, "Seats", 0, reg.REG_SZ, ','.join(selected_seats))
         reg.SetValueEx(registry_key, "FilledSeats", 0, reg.REG_DWORD, self.filled_seats_spinbox.value())
 
         for i, checkbox in enumerate(self.color_checkboxes):
@@ -244,7 +258,12 @@ class MainWindow(QMainWindow):
             registry_key = reg.OpenKey(key, subkey, 0, reg.KEY_READ)
             self.min_blinds_input.setText(reg.QueryValueEx(registry_key, "MinBlinds")[0])
             self.max_blinds_input.setText(reg.QueryValueEx(registry_key, "MaxBlinds")[0])
-            self.seats_combobox.setCurrentText(reg.QueryValueEx(registry_key, "Seats")[0])
+
+            seats = reg.QueryValueEx(registry_key, "Seats")[0].split(',')
+            for checkbox in self.seat_checkboxes:
+                if checkbox.text() in seats:
+                    checkbox.setChecked(True)
+
             self.filled_seats_spinbox.setValue(reg.QueryValueEx(registry_key, "FilledSeats")[0])
 
             for i, checkbox in enumerate(self.color_checkboxes):
