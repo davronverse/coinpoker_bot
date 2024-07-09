@@ -1,8 +1,17 @@
 import sys
+import os
 from PyQt5.QtWidgets import QApplication, QSystemTrayIcon, QMenu, QAction
 from PyQt5.QtGui import QIcon
 
-def show_push_notification(title, message, icon_path="./img/icon.png", duration=5000):
+def resource_path(relative_path):
+    try:
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
+def show_push_notification(title, message, icon_path=resource_path("icon.png"), duration=5000):
     # Create the system tray icon
     tray_icon = QSystemTrayIcon()
 
@@ -10,7 +19,7 @@ def show_push_notification(title, message, icon_path="./img/icon.png", duration=
         icon = QIcon(icon_path)
         tray_icon.setIcon(QIcon(icon_path))
     else:
-        tray_icon.setIcon(QIcon("./img/icon.png"))  # Replace with a path to a default icon if needed
+        tray_icon.setIcon(QIcon(resource_path("icon.png")))  # Replace with a path to a default icon if needed
 
     tray_icon.setVisible(True)
 

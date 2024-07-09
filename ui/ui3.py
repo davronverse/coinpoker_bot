@@ -4,6 +4,8 @@ import getpass
 import subprocess
 import psutil
 import winreg as reg
+import os
+
 from PyQt5.QtCore import Qt, QTimer
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QVBoxLayout, QWidget, QHBoxLayout, QLineEdit, QComboBox, QListWidget, QListWidgetItem, QCheckBox, QGroupBox, QFormLayout, QSpinBox, QPushButton, QGridLayout, QSystemTrayIcon, QMenu
 from PyQt5.QtGui import QPixmap, QIcon
@@ -11,7 +13,16 @@ from openpyxl import Workbook, load_workbook
 
 from module.push_notification import show_push_notification
 
+
 NOTIFICATION_TITLE = "CoinPoker BOT"
+
+def resource_path(relative_path):
+    try:
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
 
 class PlusSpinBox(QSpinBox):
     def textFromValue(self, value):
@@ -24,7 +35,7 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("CoinPoker Bot")
 
         # System tray icon
-        self.tray_icon = QSystemTrayIcon(QIcon("./img/icon.png"), self)
+        self.tray_icon = QSystemTrayIcon(QIcon(resource_path("icon.png")), self)
         self.tray_icon.setToolTip("CoinPoker Bot")
         self.tray_icon.activated.connect(self.tray_icon_activated)
 
@@ -48,7 +59,7 @@ class MainWindow(QMainWindow):
 
         # Header with image
         header = QLabel()
-        pixmap = QPixmap("./img/CoinPokerBot.png")
+        pixmap = QPixmap(resource_path("CoinPokerBot.png"))
         header.setPixmap(pixmap)
         header.setAlignment(Qt.AlignCenter)
         main_layout.addWidget(header)
