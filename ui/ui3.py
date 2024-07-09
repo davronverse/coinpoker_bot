@@ -9,6 +9,14 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QVBoxLayout, QWid
 from PyQt5.QtGui import QPixmap, QIcon
 from openpyxl import Workbook, load_workbook
 
+from module.push_notification import show_push_notification
+
+NOTIFICATION_TITLE = "CoinPoker BOT"
+
+class PlusSpinBox(QSpinBox):
+    def textFromValue(self, value):
+        return f"{value}+"
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -16,17 +24,23 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("CoinPoker Bot")
 
         # System tray icon
-        self.tray_icon = QSystemTrayIcon(QIcon("icon.png"), self)
+        self.tray_icon = QSystemTrayIcon(QIcon("./img/icon.png"), self)
         self.tray_icon.setToolTip("CoinPoker Bot")
         self.tray_icon.activated.connect(self.tray_icon_activated)
 
         # Menu for tray icon
-        tray_menu = QMenu()
-        restore_action = tray_menu.addAction("Restore")
+        self.tray_menu = QMenu()
+        restore_action = self.tray_menu.addAction("Restore")
         restore_action.triggered.connect(self.showNormal)
-        quit_action = tray_menu.addAction("Quit")
+
+        self.play_stop_action = self.tray_menu.addAction("Play")
+        self.play_stop_action.triggered.connect(self.toggle_play)
+
+        quit_action = self.tray_menu.addAction("Quit")
+        quit_action.triggered.connect(self.save_settings)
         quit_action.triggered.connect(QApplication.instance().quit)
-        self.tray_icon.setContextMenu(tray_menu)
+
+        self.tray_icon.setContextMenu(self.tray_menu)
         self.tray_icon.show()
 
         # Main layout
@@ -34,7 +48,7 @@ class MainWindow(QMainWindow):
 
         # Header with image
         header = QLabel()
-        pixmap = QPixmap("CoinPokerBot.png")
+        pixmap = QPixmap("./img/CoinPokerBot.png")
         header.setPixmap(pixmap)
         header.setAlignment(Qt.AlignCenter)
         main_layout.addWidget(header)
@@ -58,35 +72,25 @@ class MainWindow(QMainWindow):
         self.min_blinds_input = QLineEdit()
         self.min_blinds_input.setPlaceholderText("Minimum (e.g., 5/10)")
         self.min_blinds_input.setStyleSheet("padding: 5px; font-size: 16px;")
-        # self.min_blinds_input.textChanged.connect(self.save_settings)
         form_layout.addRow("Minimum Buy-in Blinds:", self.min_blinds_input)
 
         self.max_blinds_input = QLineEdit()
         self.max_blinds_input.setPlaceholderText("Maximum (e.g., 50/100)")
         self.max_blinds_input.setStyleSheet("padding: 5px; font-size: 16px;")
-        # self.max_blinds_input.textChanged.connect(self.save_settings)
         form_layout.addRow("Maximum Buy-in Blinds:", self.max_blinds_input)
-
-        # self.seats_combobox = QComboBox()
-        # self.seats_combobox.addItems(["2", "4", "7"])
-        # self.seats_combobox.setStyleSheet("padding: 5px; font-size: 16px; color: black; background-color: white;")
-        # # self.seats_combobox.currentIndexChanged.connect(self.save_settings)
-        # form_layout.addRow("Seats:", self.seats_combobox)
 
         self.seat_checkboxes = []
         seats_layout = QHBoxLayout()
         for seat in ["2", "4", "7"]:
             checkbox = QCheckBox(seat)
             checkbox.setStyleSheet("font-size: 16px; color: black; background-color: white; padding: 5px;")
-            checkbox.stateChanged.connect(self.save_settings)
             self.seat_checkboxes.append(checkbox)
             seats_layout.addWidget(checkbox)
         form_layout.addRow("Seats:", seats_layout)
 
-        self.filled_seats_spinbox = QSpinBox()
+        self.filled_seats_spinbox = PlusSpinBox()
         self.filled_seats_spinbox.setRange(0, 7)
         self.filled_seats_spinbox.setStyleSheet("padding: 5px; font-size: 16px;")
-        # self.filled_seats_spinbox.valueChanged.connect(self.save_settings)
         form_layout.addRow("Filled Seats:", self.filled_seats_spinbox)
 
         input_groupbox.setLayout(form_layout)
@@ -102,7 +106,6 @@ class MainWindow(QMainWindow):
         for i, color in enumerate(colors):
             checkbox = QCheckBox(color)
             checkbox.setStyleSheet(f"font-size: 16px; color: {color.lower()}; padding: 5px;")
-            # checkbox.stateChanged.connect(self.save_settings)
             self.color_checkboxes.append(checkbox)
             color_layout.addWidget(checkbox, i // 2, i % 2)
 
@@ -218,6 +221,9 @@ class MainWindow(QMainWindow):
                 border-radius: 10px;
                 border: 2px solid #000;
             """)
+            self.play_stop_action.setText("Stop")
+
+            show_push_notification(NOTIFICATION_TITLE, "CoinPoker bot is running")
         else:
             self.play_button.setText("Play!")
             self.play_button.setStyleSheet("""
@@ -229,6 +235,8 @@ class MainWindow(QMainWindow):
                 border-radius: 10px;
                 border: 2px solid #000;
             """)
+            self.play_stop_action.setText("Play")
+            show_push_notification(NOTIFICATION_TITLE, "CoinPoker bot stopped")
 
     def save_settings(self):
         key = reg.HKEY_CURRENT_USER
@@ -280,9 +288,3 @@ class MainWindow(QMainWindow):
     def closeEvent(self, event):
         self.hide()
         event.ignore()
-
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    window = MainWindow()
-    window.show()
-    sys.exit(app.exec_())
