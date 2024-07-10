@@ -11,12 +11,6 @@ from pywinauto import Application
 from _locale import *
 from pywinauto.controls.uia_controls import ListItemWrapper, ListViewWrapper
 
-
-MIN_BLIND = 10
-MAX_BLIND = 100
-MIN_SEATS = 2
-FILLED_MIN_SEATS = 1
-
 # Connect to the application
 app = Application(backend="uia").connect(path="C:\CoinPoker\Lobby.exe")
 
@@ -93,7 +87,7 @@ def get_second_value_from_seats(s):
     except ValueError:
         return 0
     
-def one_page_process(first_page=False):
+def one_page_process(MIN_BLIND = 10, MAX_BLIND = 100, SEATS = [2, 4, 7], FILLED_MIN_SEATS = 1, first_page=False):
     table = app_window.child_window(auto_id="Lobby.captionWrapper.wrapper.content.TabForm.scrollbarContainer.ListBox", control_type="Table", found_index=0, visible_only=True)
 
     rows = []
@@ -119,13 +113,15 @@ def one_page_process(first_page=False):
         blind = rows[i][3].element_info.name
         room = rows[i][4].element_info.name
 
+        print(blind, room)
+
         blind = get_value_from_blind(blind)
         filled = get_first_value_from_seats(room)
 
         seats = get_second_value_from_seats(room)
         left = seats - filled
 
-        if blind >= MIN_BLIND and blind <= MAX_BLIND and seats >= MIN_SEATS and filled >= FILLED_MIN_SEATS and left > 0:
+        if blind >= MIN_BLIND and blind <= MAX_BLIND and seats in SEATS and filled >= FILLED_MIN_SEATS and left > 0:
             key_press("enter")
             win32gui.SetForegroundWindow(app_window.wrapper_object().handle)
             key_press("down")
@@ -135,11 +131,24 @@ def one_page_process(first_page=False):
 
     key_press('pagedown')
 
-def run_bot():
-    one_page_process(first_page = True)
-    one_page_process()
-    one_page_process()
-    one_page_process()
-    one_page_process()
+def run_bot(min_blind, max_blind, selected_seats, filled_min_seats):
+    MIN_BLIND = get_value_from_blind(min_blind)
+    MAX_BLIND = get_value_from_blind(max_blind)
+    SEATS = selected_seats
+    FILLED_MIN_SEATS = int(filled_min_seats)
 
-run_bot()
+    for i in range(5):
+        if i == 0:
+            one_page_process(
+                MIN_BLIND=MIN_BLIND,
+                MAX_BLIND=MAX_BLIND,
+                SEATS=SEATS,
+                FILLED_MIN_SEATS=FILLED_MIN_SEATS,
+                first_page = True)
+        else:
+            one_page_process(
+                MIN_BLIND=MIN_BLIND,
+                MAX_BLIND=MAX_BLIND,
+                SEATS=SEATS,
+                FILLED_MIN_SEATS=FILLED_MIN_SEATS,
+                first_page = False)

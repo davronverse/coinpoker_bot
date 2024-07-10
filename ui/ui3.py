@@ -12,7 +12,7 @@ from PyQt5.QtGui import QPixmap, QIcon
 from openpyxl import Workbook, load_workbook
 
 from module.push_notification import show_push_notification
-
+from module.bot import run_bot
 
 NOTIFICATION_TITLE = "CoinPoker BOT"
 
@@ -235,6 +235,18 @@ class MainWindow(QMainWindow):
             self.play_stop_action.setText("Stop")
 
             show_push_notification(NOTIFICATION_TITLE, "CoinPoker bot is running")
+
+            min_blind = self.min_blinds_input.text()
+            max_blind = self.max_blinds_input.text()
+            selected_seats = [int(checkbox.text()) for checkbox in self.seat_checkboxes if checkbox.isChecked()]
+            filled_min_seats = self.filled_seats_spinbox.value()
+            
+            run_bot(
+                min_blind=min_blind,
+                max_blind=max_blind,
+                selected_seats=selected_seats,
+                filled_min_seats=filled_min_seats
+            )
         else:
             self.play_button.setText("Play!")
             self.play_button.setStyleSheet("""

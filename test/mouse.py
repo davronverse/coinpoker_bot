@@ -5,7 +5,7 @@ import time
 x, y = 100, 100
 
 # Move the mouse to the specified coordinates
-pyautogui.moveTo(x, y, duration=0.5)  # Optional: Move the mouse cursor visibly (can be omitted if not needed)
+pyautogui.moveTo(x, y, duration=0)  # Optional: Move the mouse cursor visibly (can be omitted if not needed)
 
 # Simulate a left mouse button click at the specified coordinates
 pyautogui.mouseDown()

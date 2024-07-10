@@ -1,416 +1,69 @@
-Table - ''    (L-1417, T369, R-492, B880)
-['Table']
-child_window(auto_id="Lobby.captionWrapper.wrapper.content.TabForm.scrollbarContainer.ListBox", control_type="Table")
-   |
-   | Pane - ''    (L0, T0, R0, B0)
-   | ['Pane']
-   |
-   | Header - 'NAME'    (L-1417, T369, R-1169, B399)       
-   | ['Header', 'NAMEHeader', 'NAME', 'Header0', 'Header1']
-   | child_window(title="NAME", control_type="Header")     
-   |
-   | Header - 'GAME'    (L-1169, T369, R-1041, B399)
-   | ['GAME', 'GAMEHeader', 'Header2']
-   | child_window(title="GAME", control_type="Header")
+Control Identifiers:
+
+Dialog - 'GameWindow'    (L-1420, T134, R-231, B914)
+['GameWindowDialog', 'GameWindow', 'Dialog']
+child_window(title="GameWindow", auto_id="Lobby", control_type="Window")
    | 
-   | Header - 'TYPE'    (L-1041, T369, R-938, B399)
-   | ['Header3', 'TYPEHeader', 'TYPE']
-   | child_window(title="TYPE", control_type="Header")
-   |
-   | Header - 'BLINDS'    (L-938, T369, R-814, B399)
-   | ['BLINDS', 'Header4', 'BLINDSHeader']
-   | child_window(title="BLINDS", control_type="Header")
-   |
-   | Header - 'PLAYERS'    (L-814, T369, R-722, B399)
-   | ['Header5', 'PLAYERSHeader', 'PLAYERS']
-   | child_window(title="PLAYERS", control_type="Header")
-   |
-   | Header - 'WAIT'    (L-722, T369, R-642, B399)
-   | ['WAITHeader', 'Header6', 'WAIT']
-   | child_window(title="WAIT", control_type="Header")
-   |
-   | Header - ''    (L-642, T369, R-492, B399)
-   | ['Header7']
-   |
-   | DataItem - 'NL ₮50'    (L-1417, T399, R-1169, B429)
-   | ['NL ₮50DataItem', 'DataItem', 'NL ₮50', 'DataItem0', 'DataItem1', 'NL ₮50DataItem0', 'NL ₮50DataItem1', 'NL ₮500', 'NL ₮501']
-   | child_window(title="NL ₮50", control_type="DataItem")
-   |
-   | DataItem - 'NL  Hold'em'    (L-1169, T399, R-1041, B429)
-   | ['DataItem2', "NL  Hold'em", "NL  Hold'emDataItem", "NL  Hold'em0", "NL  Hold'em1", "NL  Hold'emDataItem0", "NL  Hold'emDataItem1"]
-   | child_window(title="NL  Hold'em", control_type="DataItem")
+   | GroupBox - ''    (L-1417, T137, R-234, B167)
+   | ['CoinPoker - LobbyGroupBox', 'GroupBox', 'CoinPoker - LobbyGroupBox0', 'CoinPoker - LobbyGroupBox1', 'GroupBox0', 'GroupBox1']
+   | child_window(auto_id="Lobby.WindowCaption", control_type="Group")
+   |    | 
+   |    | Static - ''    (L-1417, T140, R-1394, B163)
+   |    | ['Static', 'Static0', 'Static1']
+   |    | child_window(auto_id="Lobby.WindowCaption.AppIcon", control_type="Text")
+   |    | 
+   |    | Static - 'CoinPoker - Lobby'    (L-1393, T137, R-309, B167)
+   |    | ['Static2', 'CoinPoker - LobbyStatic', 'CoinPoker - Lobby']
+   |    | child_window(title="CoinPoker - Lobby", auto_id="Lobby.WindowCaption.Caption", control_type="Text")
+   |    | 
+   |    | Button - ''    (L-308, T140, R-284, B164)
+   |    | ['Button', 'CoinPoker - LobbyButton', 'Button0', 'Button1', 'CoinPoker - LobbyButton0', 'CoinPoker - LobbyButton1']
+   |    | child_window(auto_id="Lobby.WindowCaption.ButtonMinimize", control_type="Button")
+   |    | 
+   |    | Button - ''    (L-283, T140, R-259, B164)
+   |    | ['Button2', 'CoinPoker - LobbyButton2']
+   |    | child_window(auto_id="Lobby.WindowCaption.ButtonMaximize", control_type="Button")
+   |    | 
+   |    | Button - ''    (L-258, T140, R-234, B164)
+   |    | ['Button3', 'CoinPoker - LobbyButton3']
+   |    | child_window(auto_id="Lobby.WindowCaption.ButtonClose", control_type="Button")
    | 
-   | DataItem - ''    (L-1041, T399, R-938, B429)
-   | ['DataItem3']
-   |
-   | DataItem - '₮ 0.25 / ₮ 0.50'    (L-938, T399, R-814, B429)
-   | ['₮ 0.25 / ₮ 0.50DataItem', '₮ 0.25 / ₮ 0.50', 'DataItem4', '₮ 0.25 / ₮ 0.50DataItem0', '₮ 0.25 / ₮ 0.50DataItem1', '₮ 0.25 / ₮ 0.500', '₮ 0.25 / ₮ 0.501']
-   | child_window(title="₮ 0.25 / ₮ 0.50", control_type="DataItem")
-   |
-   | DataItem - '7 / 7'    (L-814, T399, R-722, B429)
-   | ['7 / 7', '7 / 7DataItem', 'DataItem5', '7 / 70', '7 / 71', '7 / 7DataItem0', '7 / 7DataItem1']
-   | child_window(title="7 / 7", control_type="DataItem")
-   |
-   | DataItem - '2'    (L-722, T399, R-642, B429)
-   | ['2DataItem', 'DataItem6', '2', '2DataItem0', '2DataItem1', '20', '21']
-   | child_window(title="2", control_type="DataItem")
-   |
-   | DataItem - ''    (L-642, T399, R-492, B429)
-   | ['DataItem7']
-   |
-   | DataItem - 'NL ₮25 III'    (L-1417, T429, R-1169, B459)
-   | ['DataItem8', 'NL ₮25 III', 'NL ₮25 IIIDataItem']
-   | child_window(title="NL ₮25 III", control_type="DataItem")
-   | 
-   | DataItem - 'NL  Hold'em'    (L-1169, T429, R-1041, B459)
-   | ['DataItem9', "NL  Hold'em2", "NL  Hold'emDataItem2"]
-   | child_window(title="NL  Hold'em", control_type="DataItem")
-   |
-   | DataItem - ''    (L-1041, T429, R-938, B459)
-   | ['DataItem10']
-   |
-   | DataItem - '₮ 0.10 / ₮ 0.25'    (L-938, T429, R-814, B459)
-   | ['₮ 0.10 / ₮ 0.25DataItem', '₮ 0.10 / ₮ 0.25', 'DataItem11']
-   | child_window(title="₮ 0.10 / ₮ 0.25", control_type="DataItem")
-   |
-   | DataItem - '7 / 7'    (L-814, T429, R-722, B459)
-   | ['7 / 72', '7 / 7DataItem2', 'DataItem12']
-   | child_window(title="7 / 7", control_type="DataItem")
-   |
-   | DataItem - '0'    (L-722, T429, R-642, B459)
-   | ['0', 'DataItem13', '0DataItem', '00', '01', '0DataItem0', '0DataItem1']
-   | child_window(title="0", control_type="DataItem")
-   | 
-   | DataItem - ''    (L-642, T429, R-492, B459)
-   | ['DataItem14']
-   |
-   | DataItem - 'NL ₮100'    (L-1417, T459, R-1169, B489)
-   | ['DataItem15', 'NL ₮100', 'NL ₮100DataItem', 'NL ₮1000', 'NL ₮1001', 'NL ₮100DataItem0', 'NL ₮100DataItem1']
-   | child_window(title="NL ₮100", control_type="DataItem")
-   |
-   | DataItem - 'NL  Hold'em'    (L-1169, T459, R-1041, B489)
-   | ['DataItem16', "NL  Hold'em3", "NL  Hold'emDataItem3"]
-   | child_window(title="NL  Hold'em", control_type="DataItem")
-   |
-   | DataItem - ''    (L-1041, T459, R-938, B489)
-   | ['DataItem17']
-   | 
-   | DataItem - '₮ 0.50 / ₮ 1.00'    (L-938, T459, R-814, B489)
-   | ['₮ 0.50 / ₮ 1.00DataItem', 'DataItem18', '₮ 0.50 / ₮ 1.00', '₮ 0.50 / ₮ 1.00DataItem0', '₮ 0.50 / ₮ 1.00DataItem1', '₮ 0.50 / ₮ 1.000', '₮ 0.50 / ₮ 1.001']
-   | child_window(title="₮ 0.50 / ₮ 1.00", control_type="DataItem")
-   |
-   | DataItem - '7 / 7'    (L-814, T459, R-722, B489)
-   | ['7 / 73', '7 / 7DataItem3', 'DataItem19']
-   | child_window(title="7 / 7", control_type="DataItem")
-   |
-   | DataItem - '0'    (L-722, T459, R-642, B489)
-   | ['02', 'DataItem20', '0DataItem2']
-   | child_window(title="0", control_type="DataItem")
-   | 
-   | DataItem - ''    (L-642, T459, R-492, B489)
-   | ['DataItem21']
-   |
-   | DataItem - 'NL ₮50'    (L-1417, T489, R-1169, B519)
-   | ['NL ₮50DataItem2', 'DataItem22', 'NL ₮502']
-   | child_window(title="NL ₮50", control_type="DataItem")
-   |
-   | DataItem - 'NL  Hold'em'    (L-1169, T489, R-1041, B519)
-   | ['DataItem23', "NL  Hold'em4", "NL  Hold'emDataItem4"]
-   | child_window(title="NL  Hold'em", control_type="DataItem")
-   | 
-   | DataItem - ''    (L-1041, T489, R-938, B519)
-   | ['DataItem24']
-   |
-   | DataItem - '₮ 0.25 / ₮ 0.50'    (L-938, T489, R-814, B519)
-   | ['₮ 0.25 / ₮ 0.50DataItem2', '₮ 0.25 / ₮ 0.502', 'DataItem25']
-   | child_window(title="₮ 0.25 / ₮ 0.50", control_type="DataItem")
-   |
-   | DataItem - '7 / 7'    (L-814, T489, R-722, B519)
-   | ['7 / 74', '7 / 7DataItem4', 'DataItem26']
-   | child_window(title="7 / 7", control_type="DataItem")
-   |
-   | DataItem - '0'    (L-722, T489, R-642, B519)
-   | ['03', 'DataItem27', '0DataItem3']
-   | child_window(title="0", control_type="DataItem")
-   | 
-   | DataItem - ''    (L-642, T489, R-492, B519)
-   | ['DataItem28']
-   |
-   | DataItem - 'NL ₮5 VII'    (L-1417, T519, R-1169, B549)
-   | ['NL ₮5 VII', 'DataItem29', 'NL ₮5 VIIDataItem']
-   | child_window(title="NL ₮5 VII", control_type="DataItem")
-   |
-   | DataItem - 'NL  Hold'em'    (L-1169, T519, R-1041, B549)
-   | ['DataItem30', "NL  Hold'em5", "NL  Hold'emDataItem5"]
-   | child_window(title="NL  Hold'em", control_type="DataItem")
-   | 
-   | DataItem - ''    (L-1041, T519, R-938, B549)
-   | ['DataItem31']
-   |
-   | DataItem - '₮ 0.02 / ₮ 0.05'    (L-938, T519, R-814, B549)
-   | ['DataItem32', '₮ 0.02 / ₮ 0.05', '₮ 0.02 / ₮ 0.05DataItem', '₮ 0.02 / ₮ 0.050', '₮ 0.02 / ₮ 0.051', '₮ 0.02 / ₮ 0.05DataItem0', '₮ 0.02 / ₮ 0.05DataItem1']
-   | child_window(title="₮ 0.02 / ₮ 0.05", control_type="DataItem")
-   | 
-   | DataItem - '7 / 7'    (L-814, T519, R-722, B549)
-   | ['7 / 75', '7 / 7DataItem5', 'DataItem33']
-   | child_window(title="7 / 7", control_type="DataItem")
-   |
-   | DataItem - '2'    (L-722, T519, R-642, B549)
-   | ['2DataItem2', 'DataItem34', '22']
-   | child_window(title="2", control_type="DataItem")
-   |
-   | DataItem - ''    (L-642, T519, R-492, B549)
-   | ['DataItem35']
-   | 
-   | DataItem - 'NL ₮5 VI'    (L-1417, T549, R-1169, B579)
-   | ['NL ₮5 VIDataItem', 'DataItem36', 'NL ₮5 VI']
-   | child_window(title="NL ₮5 VI", control_type="DataItem")
-   |
-   | DataItem - 'NL  Hold'em'    (L-1169, T549, R-1041, B579)
-   | ['DataItem37', "NL  Hold'em6", "NL  Hold'emDataItem6"]
-   | child_window(title="NL  Hold'em", control_type="DataItem")
-   |
-   | DataItem - ''    (L-1041, T549, R-938, B579)
-   | ['DataItem38']
-   | 
-   | DataItem - '₮ 0.02 / ₮ 0.05'    (L-938, T549, R-814, B579)
-   | ['DataItem39', '₮ 0.02 / ₮ 0.052', '₮ 0.02 / ₮ 0.05DataItem2']
-   | child_window(title="₮ 0.02 / ₮ 0.05", control_type="DataItem")
-   |
-   | DataItem - '7 / 7'    (L-814, T549, R-722, B579)
-   | ['7 / 76', '7 / 7DataItem6', 'DataItem40']
-   | child_window(title="7 / 7", control_type="DataItem")
-   | 
-   | DataItem - '1'    (L-722, T549, R-642, B579)
-   | ['DataItem41', '1DataItem', '1', '1DataItem0', '1DataItem1', '10', '11']
-   | child_window(title="1", control_type="DataItem")
-   |
-   | DataItem - ''    (L-642, T549, R-492, B579)
-   | ['DataItem42']
-   | 
-   | DataItem - 'NL ₮5 V'    (L-1417, T579, R-1169, B609)
-   | ['NL ₮5 V', 'DataItem43', 'NL ₮5 VDataItem']
-   | child_window(title="NL ₮5 V", control_type="DataItem")
-   |
-   | DataItem - 'NL  Hold'em'    (L-1169, T579, R-1041, B609)
-   | ['DataItem44', "NL  Hold'em7", "NL  Hold'emDataItem7"]
-   | child_window(title="NL  Hold'em", control_type="DataItem")
-   | 
-   | DataItem - ''    (L-1041, T579, R-938, B609)
-   | ['DataItem45']
-   |
-   | DataItem - '₮ 0.02 / ₮ 0.05'    (L-938, T579, R-814, B609)
-   | ['DataItem46', '₮ 0.02 / ₮ 0.053', '₮ 0.02 / ₮ 0.05DataItem3']
-   | child_window(title="₮ 0.02 / ₮ 0.05", control_type="DataItem")
-   | 
-   | DataItem - '7 / 7'    (L-814, T579, R-722, B609)
-   | ['7 / 77', '7 / 7DataItem7', 'DataItem47']
-   | child_window(title="7 / 7", control_type="DataItem")
-   |
-   | DataItem - '2'    (L-722, T579, R-642, B609)
-   | ['2DataItem3', 'DataItem48', '23']
-   | child_window(title="2", control_type="DataItem")
-   | 
-   | DataItem - ''    (L-642, T579, R-492, B609)
-   | ['DataItem49']
-   |
-   | DataItem - 'NL ₮5 IV'    (L-1417, T609, R-1169, B639)
-   | ['NL ₮5 IV', 'DataItem50', 'NL ₮5 IVDataItem']
-   | child_window(title="NL ₮5 IV", control_type="DataItem")
-   | 
-   | DataItem - 'NL  Hold'em'    (L-1169, T609, R-1041, B639)
-   | ['DataItem51', "NL  Hold'em8", "NL  Hold'emDataItem8"]
-   | child_window(title="NL  Hold'em", control_type="DataItem")
-   |
-   | DataItem - ''    (L-1041, T609, R-938, B639)
-   | ['DataItem52']
-   | 
-   | DataItem - '₮ 0.02 / ₮ 0.05'    (L-938, T609, R-814, B639)
-   | ['DataItem53', '₮ 0.02 / ₮ 0.054', '₮ 0.02 / ₮ 0.05DataItem4']
-   | child_window(title="₮ 0.02 / ₮ 0.05", control_type="DataItem")
-   |
-   | DataItem - '7 / 7'    (L-814, T609, R-722, B639)
-   | ['7 / 78', '7 / 7DataItem8', 'DataItem54']
-   | child_window(title="7 / 7", control_type="DataItem")
-   | 
-   | DataItem - '1'    (L-722, T609, R-642, B639)
-   | ['DataItem55', '1DataItem2', '12']
-   | child_window(title="1", control_type="DataItem")
-   |
-   | DataItem - ''    (L-642, T609, R-492, B639)
-   | ['DataItem56']
-   | 
-   | DataItem - 'NL ₮5 III'    (L-1417, T639, R-1169, B669)
-   | ['DataItem57', 'NL ₮5 III', 'NL ₮5 IIIDataItem']
-   | child_window(title="NL ₮5 III", control_type="DataItem")
-   |
-   | DataItem - 'NL  Hold'em'    (L-1169, T639, R-1041, B669)
-   | ['DataItem58', "NL  Hold'em9", "NL  Hold'emDataItem9"]
-   | child_window(title="NL  Hold'em", control_type="DataItem")
-   |
-   | DataItem - ''    (L-1041, T639, R-938, B669)
-   | ['DataItem59']
-   | 
-   | DataItem - '₮ 0.02 / ₮ 0.05'    (L-938, T639, R-814, B669)
-   | ['DataItem60', '₮ 0.02 / ₮ 0.055', '₮ 0.02 / ₮ 0.05DataItem5']
-   | child_window(title="₮ 0.02 / ₮ 0.05", control_type="DataItem")
-   |
-   | DataItem - '7 / 7'    (L-814, T639, R-722, B669)
-   | ['7 / 79', '7 / 7DataItem9', 'DataItem61']
-   | child_window(title="7 / 7", control_type="DataItem")
-   | 
-   | DataItem - '1'    (L-722, T639, R-642, B669)
-   | ['DataItem62', '1DataItem3', '13']
-   | child_window(title="1", control_type="DataItem")
-   | 
-   | DataItem - ''    (L-642, T639, R-492, B669)
-   | ['DataItem63']
-   |
-   | DataItem - 'NL ₮5 II'    (L-1417, T669, R-1169, B699)
-   | ['NL ₮5 II', 'NL ₮5 IIDataItem', 'DataItem64']
-   | child_window(title="NL ₮5 II", control_type="DataItem")
-   | 
-   | DataItem - 'NL  Hold'em'    (L-1169, T669, R-1041, B699)
-   | ['DataItem65', "NL  Hold'em10", "NL  Hold'emDataItem10"]
-   | child_window(title="NL  Hold'em", control_type="DataItem")
-   | 
-   | DataItem - ''    (L-1041, T669, R-938, B699)
-   | ['DataItem66']
-   |
-   | DataItem - '₮ 0.02 / ₮ 0.05'    (L-938, T669, R-814, B699)
-   | ['DataItem67', '₮ 0.02 / ₮ 0.056', '₮ 0.02 / ₮ 0.05DataItem6']
-   | child_window(title="₮ 0.02 / ₮ 0.05", control_type="DataItem")
-   | 
-   | DataItem - '7 / 7'    (L-814, T669, R-722, B699)
-   | ['7 / 710', '7 / 7DataItem10', 'DataItem68']
-   | child_window(title="7 / 7", control_type="DataItem")
-   | 
-   | DataItem - '0'    (L-722, T669, R-642, B699)
-   | ['04', 'DataItem69', '0DataItem4']
-   | child_window(title="0", control_type="DataItem")
-   |
-   | DataItem - ''    (L-642, T669, R-492, B699)
-   | ['DataItem70']
-   | 
-   | DataItem - 'NL ₮5'    (L-1417, T699, R-1169, B729)
-   | ['DataItem71', 'NL ₮5', 'NL ₮5DataItem']
-   | child_window(title="NL ₮5", control_type="DataItem")
-   |
-   | DataItem - 'NL  Hold'em'    (L-1169, T699, R-1041, B729)
-   | ['DataItem72', "NL  Hold'em11", "NL  Hold'emDataItem11"]
-   | child_window(title="NL  Hold'em", control_type="DataItem")
-   | 
-   | DataItem - ''    (L-1041, T699, R-938, B729)
-   | ['DataItem73']
-   | 
-   | DataItem - '₮ 0.02 / ₮ 0.05'    (L-938, T699, R-814, B729)
-   | ['DataItem74', '₮ 0.02 / ₮ 0.057', '₮ 0.02 / ₮ 0.05DataItem7']
-   | child_window(title="₮ 0.02 / ₮ 0.05", control_type="DataItem")
-   |
-   | DataItem - '7 / 7'    (L-814, T699, R-722, B729)
-   | ['7 / 711', '7 / 7DataItem11', 'DataItem75']
-   | child_window(title="7 / 7", control_type="DataItem")
-   | 
-   | DataItem - '1'    (L-722, T699, R-642, B729)
-   | ['DataItem76', '1DataItem4', '14']
-   | child_window(title="1", control_type="DataItem")
-   | 
-   | DataItem - ''    (L-642, T699, R-492, B729)
-   | ['DataItem77']
-   |
-   | DataItem - '5PLO ₮200 II'    (L-1417, T729, R-1169, B759)
-   | ['DataItem78', '5PLO ₮200 IIDataItem', '5PLO ₮200 II']
-   | child_window(title="5PLO ₮200 II", control_type="DataItem")
-   |
-   | DataItem - 'PL  5 Card Omaha'    (L-1169, T729, R-1041, B759)
-   | ['DataItem79', 'PL  5 Card Omaha', 'PL  5 Card OmahaDataItem', 'PL  5 Card Omaha0', 'PL  5 Card Omaha1', 'PL  5 Card OmahaDataItem0', 'PL  5 Card OmahaDataItem1']
-   | child_window(title="PL  5 Card Omaha", control_type="DataItem")
-   | 
-   | DataItem - ''    (L-1041, T729, R-938, B759)
-   | ['DataItem80']
-   | 
-   | DataItem - '₮ 1.00 / ₮ 2.00'    (L-938, T729, R-814, B759)
-   | ['₮ 1.00 / ₮ 2.00DataItem', 'DataItem81', '₮ 1.00 / ₮ 2.00', '₮ 1.00 / ₮ 2.00DataItem0', '₮ 1.00 / ₮ 2.00DataItem1', '₮ 1.00 / ₮ 2.000', '₮ 1.00 / ₮ 2.001']
-   | child_window(title="₮ 1.00 / ₮ 2.00", control_type="DataItem")
-   |
-   | DataItem - '7 / 7'    (L-814, T729, R-722, B759)
-   | ['7 / 712', '7 / 7DataItem12', 'DataItem82']
-   | child_window(title="7 / 7", control_type="DataItem")
-   | 
-   | DataItem - '0'    (L-722, T729, R-642, B759)
-   | ['05', 'DataItem83', '0DataItem5']
-   | child_window(title="0", control_type="DataItem")
-   | 
-   | DataItem - ''    (L-642, T729, R-492, B759)
-   | ['DataItem84']
-   | 
-   | DataItem - '5PLO ₮200'    (L-1417, T759, R-1169, B789)
-   | ['5PLO ₮200DataItem', 'DataItem85', '5PLO ₮200']
-   | child_window(title="5PLO ₮200", control_type="DataItem")
-   | 
-   | DataItem - 'PL  5 Card Omaha'    (L-1169, T759, R-1041, B789)
-   | ['DataItem86', 'PL  5 Card Omaha2', 'PL  5 Card OmahaDataItem2']
-   | child_window(title="PL  5 Card Omaha", control_type="DataItem")
-   | 
-   | DataItem - ''    (L-1041, T759, R-938, B789)
-   | ['DataItem87']
-   |
-   | DataItem - '₮ 1.00 / ₮ 2.00'    (L-938, T759, R-814, B789)
-   | ['₮ 1.00 / ₮ 2.00DataItem2', 'DataItem88', '₮ 1.00 / ₮ 2.002']
-   | child_window(title="₮ 1.00 / ₮ 2.00", control_type="DataItem")
-   | 
-   | DataItem - '7 / 7'    (L-814, T759, R-722, B789)
-   | ['7 / 713', '7 / 7DataItem13', 'DataItem89']
-   | child_window(title="7 / 7", control_type="DataItem")
-   | 
-   | DataItem - '1'    (L-722, T759, R-642, B789)
-   | ['DataItem90', '1DataItem5', '15']
-   | child_window(title="1", control_type="DataItem")
-   | 
-   | DataItem - ''    (L-642, T759, R-492, B789)
-   | ['DataItem91']
-   | 
-   | DataItem - '5PLO ₮100'    (L-1417, T789, R-1169, B819)
-   | ['5PLO ₮100', '5PLO ₮100DataItem', 'DataItem92']
-   | child_window(title="5PLO ₮100", control_type="DataItem")
-   |
-   | DataItem - 'PL  5 Card Omaha'    (L-1169, T789, R-1041, B819)
-   | ['DataItem93', 'PL  5 Card Omaha3', 'PL  5 Card OmahaDataItem3']
-   | child_window(title="PL  5 Card Omaha", control_type="DataItem")
-   | 
-   | DataItem - ''    (L-1041, T789, R-938, B819)
-   | ['DataItem94']
-   | 
-   | DataItem - '₮ 0.50 / ₮ 1.00'    (L-938, T789, R-814, B819)
-   | ['₮ 0.50 / ₮ 1.00DataItem2', 'DataItem95', '₮ 0.50 / ₮ 1.002']
-   | child_window(title="₮ 0.50 / ₮ 1.00", control_type="DataItem")
-   | 
-   | DataItem - '7 / 7'    (L-814, T789, R-722, B819)
-   | ['7 / 714', '7 / 7DataItem14', 'DataItem96']
-   | child_window(title="7 / 7", control_type="DataItem")
-   | 
-   | DataItem - '3'    (L-722, T789, R-642, B819)
-   | ['3', 'DataItem97', '3DataItem']
-   | child_window(title="3", control_type="DataItem")
-   |
-   | DataItem - ''    (L-642, T789, R-492, B819)
-   | ['DataItem98']
-   | 
-   | DataItem - 'NL ₮100'    (L-1417, T819, R-1169, B849)
-   | ['DataItem99', 'NL ₮1002', 'NL ₮100DataItem2']
-   | child_window(title="NL ₮100", control_type="DataItem")
-   | 
-   | DataItem - 'NL  Hold'em'    (L-1169, T819, R-1041, B849)
-   | ['DataItem100', "NL  Hold'em12", "NL  Hold'emDataItem12"]
-   | child_window(title="NL  Hold'em", control_type="DataItem")
-   | 
-   | DataItem - ''    (L-1041, T819, R-938, B849)
-   | ['DataItem101']
-   | 
-   | DataItem - '₮ 0.50 / ₮ 1.00'    (L-938, T819, R-814, B849)
-   | ['₮ 0.50 / ₮ 1.00DataItem3', 'DataItem102', '₮ 0.50 / ₮ 1.003']
-   | child_window(title="₮ 0.50 / ₮ 1.00", control_type="DataItem")
-   | 
-   | DataItem - '7 / 7'    (L-814, T819, R-722, B849)
-   | ['7 / 715', '7 / 7DataItem15', 'DataItem103']
-   | child_window(title="7 / 7", control_type="DataItem")
+   | GroupBox - ''    (L-1417, T167, R-234, B911)
+   | ['CoinPoker - LobbyGroupBox2', 'GroupBox2']
+   | child_window(auto_id="Lobby.captionWrapper", control_type="Group")
+   |    | 
+   |    | GroupBox - ''    (L-1417, T167, R-234, B258)
+   |    | ['CoinPoker - LobbyGroupBox3', 'GroupBox3']
+   |    | child_window(auto_id="Lobby.captionWrapper.header", control_type="Group")
+   |    |    | 
+   |    |    | GroupBox - ''    (L-1417, T167, R-234, B258)
+   |    |    | ['CoinPoker - LobbyGroupBox4', 'GroupBox4']
+   |    |    | child_window(auto_id="Lobby.captionWrapper.header.LobbyHeader", control_type="Group")
+   |    |    |    | 
+   |    |    |    | GroupBox - ''    (L-1417, T167, R-234, B258)
+   |    |    |    | ['CoinPoker - LobbyGroupBox5', 'GroupBox5']
+   |    |    |    | child_window(auto_id="Lobby.captionWrapper.header.LobbyHeader.LobbyHeader", control_type="Group")
+   |    |    |    |    | 
+   |    |    |    |    | Image - ''    (L-1387, T167, R-1193, B258)
+   |    |    |    |    | ['Image', 'CoinPoker - LobbyImage', 'Image0', 'Image1']
+   |    |    |    |    | child_window(auto_id="Lobby.captionWrapper.header.LobbyHeader.LobbyHeader.FranchiseLogo", control_type="Image")
+   |    |    |    |    | 
+   |    |    |    |    | GroupBox - ''    (L-1193, T167, R-264, B258)
+   |    |    |    |    | ['CoinPoker - LobbyGroupBox6', 'GroupBox6']
+   |    |    |    |    | child_window(auto_id="Lobby.captionWrapper.header.LobbyHeader.LobbyHeader.widget", control_type="Group")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | GroupBox - ''    (L-1193, T167, R-264, B197)
+   |    |    |    |    |    | ['CoinPoker - LobbyGroupBox7', 'GroupBox7']
+   |    |    |    |    |    | child_window(auto_id="Lobby.captionWrapper.header.LobbyHeader.LobbyHeader.widget.infoLine", control_type="Group")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Button - 'olek07'    (L-628, T177, R-579, B197)
+   |    |    |    |    |    |    | ['Button4', 'olek07', 'olek07Button']
+   |    |    |    |    |    |    | child_window(title="olek07", auto_id="Lobby.captionWrapper.header.LobbyHeader.LobbyHeader.widget.infoLine.NickName", control_type="Button")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Custom - ''    (L-569, T178, R-566, B195)
+   |    |    |    |    |    |    | ['Custom', 'CoinPoker - LobbyCustom', 'Custom0', 'Custom1']
+   |    |    |    |    |    |    | child_window(auto_id="Lobby.captionWrapper.header.LobbyHeader.LobbyHeader.widget.infoLine.HLine1", control_type="Custom")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Button - 'Balance'    (L-556, T177, R-501, B197)
+   |    |    |    |    |    |    | ['Button5', 'BalanceButton', 'Balance']
+   |    |    |    |    |    |    | child_window(title="Balance", auto_id="Lobby.captionWrapper.header.LobbyHeader.LobbyHeader.widget.infoLine.Balance", control_type="Button")
